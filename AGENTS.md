@@ -48,8 +48,19 @@ create a random markdown report file unless explicitly requested.
 
 For existing projects added under `projects/<domain>/`, do not run onboarding as one giant task.
 
+Skills are sequential checkpoints, not an automatic pipeline.
+
+Each skill must stop after its final report.
+
+For users who want semi-automatic adoption of an existing repo, use `project-adopt-pipeline` as the onboarding entrypoint.
+
+Default pipeline mode is `autonomous-safe`.
+
+`full-auto` may continue further without confirmation, but it still stops on hard safety boundaries.
+
 Use the skills under `.ai/skills/` in this order:
 
+0. `project-adopt-pipeline` (optional orchestrator)
 1. `project-onboard`
 2. `project-canon-seed`
 3. `legacy-artifact-audit`
@@ -60,13 +71,15 @@ Use the skills under `.ai/skills/` in this order:
 
 Each skill has a narrow scope and stop point.
 
+Do not automatically run the next skill unless the user explicitly asks.
+
 Do not combine onboarding, canon seeding, cleanup, and real feature work in one pass.
 
 ## Required read order
 
 1. `.ai/core/execution-loop.md`
 2. `.ai/core/docs-grounding-rules.md`
-3. `.ai/workspace/project-index.md`
+3. `.ai/workspace/project-index.local.md` when present, otherwise `.ai/workspace/project-index.example.md`
 4. `projects/<target-project>/.ai-project.md`
 5. `projects/<target-project>/project-canon/README.md`
 6. Relevant files under `projects/<target-project>/project-canon/`

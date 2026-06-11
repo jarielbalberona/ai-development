@@ -72,6 +72,7 @@ project-canon/changelog/README.md
 ## Must Not Do
 
 - Do not perform full architecture audit.
+- Do not cleanup/delete legacy artifacts.
 - Do not delete stale files.
 - Do not dump old docs wholesale into canon.
 
@@ -92,6 +93,8 @@ Final reports belong in chat/ticket/PR, not repo markdown.
 ## Final Output
 
 `project-canon/` is usable as a baseline but explicitly not fully validated.
+
+Stop after the final report. Do not automatically run `legacy-artifact-audit`.
 
 ## Closeout
 

@@ -4,6 +4,8 @@
 
 Execute the cleanup plan from `legacy-artifact-audit`.
 
+Destructive cleanup is allowed only when this skill is explicitly invoked.
+
 ## Inputs
 
 ```txt
@@ -82,6 +84,8 @@ Final reports belong in chat/ticket/PR, not repo markdown.
 ## Final Output
 
 Repo is clean from stale AI/task/docs artifacts.
+
+Stop after the final report. Do not automatically run `project-guardrails-profile`.
 
 ## Closeout
 

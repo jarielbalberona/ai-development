@@ -7,7 +7,7 @@ Usage: .ai/scripts/init-project.sh [--force] <domain-name>
 
 Creates projects/<domain-name>/ from .ai/templates/project/.
 Generates .ai-local/core-snapshot.md.
-Prints a reminder to update .ai/workspace/project-index.md.
+Prints a reminder to update .ai/workspace/project-index.local.md when using a local/private routing file, or to use .ai/workspace/project-index.example.md as the committed format reference.
 EOF
 }
 
@@ -43,4 +43,5 @@ fi
 
 "$root/.ai/scripts/sync-project-ai.sh" "$domain"
 
-printf '%s\n' "Reminder: update $root/.ai/workspace/project-index.md with an entry for $domain."
+printf '%s\n' "Reminder: update $root/.ai/workspace/project-index.local.md with an entry for $domain when using a local/private routing file."
+printf '%s\n' "Committed template: $root/.ai/workspace/project-index.example.md"

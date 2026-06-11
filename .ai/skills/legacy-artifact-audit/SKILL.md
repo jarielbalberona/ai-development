@@ -111,6 +111,8 @@ Final reports belong in chat/ticket/PR, not repo markdown.
 
 A cleanup plan. No deletion by default.
 
+Stop after the final report. Do not automatically run `legacy-artifact-cleanup`.
+
 ## Closeout
 
 Report:

@@ -88,6 +88,8 @@ Final reports belong in chat/ticket/PR, not repo markdown.
 
 Future tickets have project-specific safety rails and verification rules.
 
+Stop after the final report. Do not automatically run `baseline-stabilize`.
+
 ## Closeout
 
 Report:

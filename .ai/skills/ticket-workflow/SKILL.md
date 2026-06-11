@@ -59,6 +59,8 @@ Final reports belong in chat/ticket/PR, not repo markdown.
 
 A verified task result with clear report.
 
+This skill is the normal real-work loop after project baseline readiness is already established.
+
 ## Closeout
 
 Report:

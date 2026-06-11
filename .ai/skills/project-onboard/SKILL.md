@@ -30,7 +30,7 @@ projects/<domain>/project-canon/ skeleton
 Update:
 
 ```txt
-.ai/workspace/project-index.md
+.ai/workspace/project-index.local.md when present, otherwise use .ai/workspace/project-index.example.md as the format reference
 ```
 
 ## Workflow
@@ -40,12 +40,16 @@ Update:
 3. Create or repair the project entrypoint files and `project-canon/` skeleton.
 4. Ensure the project entry files point to parent `.ai/core/` rules and `project-canon/`.
 5. Regenerate `.ai-local/core-snapshot.md` from the shared parent `.ai/`.
-6. Update `.ai/workspace/project-index.md` so the repo appears in workspace discovery.
+6. Update `.ai/workspace/project-index.local.md` for local/private routing when it exists, or use `.ai/workspace/project-index.example.md` only as the format reference.
 7. Stop. Do not seed deep project truth yet.
 
 ## Must Not Do
 
 - Do not deeply document the project.
+- Do not seed full canon.
+- Do not audit/delete legacy artifacts.
+- Do not define project guardrails.
+- Do not start ticket work.
 - Do not delete old docs/artifacts.
 - Do not modify application code.
 - Do not run app tests.
@@ -69,6 +73,8 @@ Final reports belong in chat/ticket/PR, not repo markdown.
 ## Final Output
 
 The project is structurally onboarded and ready for `project-canon-seed`.
+
+Stop after the final report. Do not automatically run `project-canon-seed`.
 
 ## Closeout
 

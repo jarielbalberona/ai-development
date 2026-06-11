@@ -1,6 +1,9 @@
 # Product/application repos are versioned separately.
 projects/
 
+# Local/private project routing
+.ai/workspace/project-index.local.md
+
 # OS/editor noise
 .DS_Store
 .idea/
