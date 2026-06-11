@@ -54,7 +54,7 @@ Do not create project-local .agent/.
 Do not create project-local .codex/.
 Do not create random markdown.
 Do not create reports/plans/handoffs/task-notes folders.
-Do not recreate docs/ or docs.legacy-review/ as source-of-truth.
+Do not create docs quarantine folders.
 Do not commit unless explicitly asked.
 Final reports belong in chat/ticket/PR, not repo markdown.
 ```

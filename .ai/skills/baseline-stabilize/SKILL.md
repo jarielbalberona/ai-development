@@ -45,7 +45,7 @@ no real project names were added to .ai/workspace/project-index.example.md
 3. Confirm project canon and entry files are coherent.
 4. Confirm the local project index reflects the adopted project when the local index exists.
 5. Confirm root `docs/` is absent unless explicitly approved.
-6. Confirm `docs.legacy-review/` is absent.
+6. Confirm no docs quarantine folder was created.
 7. Run the narrowest relevant checks if tooling/instructions changed.
 8. Produce a commit recommendation or readiness verdict.
 9. Stop before feature/bug work.
@@ -66,7 +66,7 @@ Do not create project-local .agent/.
 Do not create project-local .codex/.
 Do not create random markdown.
 Do not create reports/plans/handoffs/task-notes folders.
-Do not recreate docs/ or docs.legacy-review/ as source-of-truth.
+Do not create docs quarantine folders.
 Do not commit unless explicitly asked.
 Final reports belong in chat/ticket/PR, not repo markdown.
 ```

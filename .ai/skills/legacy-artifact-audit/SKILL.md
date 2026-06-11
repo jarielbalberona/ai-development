@@ -22,7 +22,6 @@ Inspect if present:
 
 ```txt
 docs/
-docs.legacy-review/
 .ai/
 .agent/
 .codex/
@@ -49,6 +48,7 @@ During adoption it must be classified into:
 
 Root-level `docs/` must not remain as a normal adopted-project final state unless the user explicitly approves it.
 Size or mixed content alone is not a blocker.
+Do not move it into a quarantine folder.
 
 ## Classification Buckets
 
@@ -119,7 +119,7 @@ Do not create project-local .agent/.
 Do not create project-local .codex/.
 Do not create random markdown.
 Do not create reports/plans/handoffs/task-notes folders.
-Do not recreate docs/ or docs.legacy-review/ as source-of-truth.
+Do not create docs quarantine folders.
 Do not commit unless explicitly asked.
 Final reports belong in chat/ticket/PR, not repo markdown.
 ```

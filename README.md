@@ -138,15 +138,15 @@ ticket/plain issue
 - Durable project truth goes to `project-canon/`.
 - Reusable workflow truth goes to `.ai/core/` or `.ai/workspace/`.
 - Temporary task memory goes to `.ai/state/` and must be cleaned.
-- Do not create project-local `.ai/`, `.agent/`, `.codex/`, `docs/`, `docs.legacy-review/`, `reports/`, `initiatives/`, `task-notes/`, or `plans/` unless explicitly approved.
+- Do not create project-local `.ai/`, `.agent/`, `.codex/`, `docs/`, `reports/`, `initiatives/`, `task-notes/`, or `plans/` unless explicitly approved.
 
 ## Root Docs Policy
 
 - Root-level `docs/` is legacy by default during project adoption.
 - Large or mixed root `docs/` trees are not blockers by themselves. Process them by directory/topic batches.
-- It must be migrated into `project-canon/`, moved to truly local app/package docs, deleted, or flagged as `REVIEW_BLOCKER`.
+- The agent must inspect and classify the root `docs/` tree, promote durable truth into `project-canon/`, move truly local app/package docs only when ownership is obvious, delete stale/noisy docs, and report exact `REVIEW_BLOCKER` files with reasons when classification is unsafe.
 - Root `docs/` must not survive adoption as a normal final state unless the user explicitly approves it.
-- `docs.legacy-review/` must not become a permanent fallback.
+- Do not create quarantine folders as a fallback. Final reports belong in chat/ticket/PR, not repo markdown.
 
 ## Canon Correction
 

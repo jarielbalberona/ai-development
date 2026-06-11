@@ -23,8 +23,9 @@ During adoption:
 - durable project truth goes to `project-canon/`
 - truly local documentation may move to app/package-local docs only when ownership is obvious
 - stale/noisy root docs are deleted
-- unresolved root docs classification is a blocker, not a reason to preserve root `docs/`
+- unresolved root docs classification is a blocker only at exact file-path level, not a reason to preserve root `docs/`
 - large or mixed root `docs/` trees must be processed by directory/topic batches, not treated as blockers by themselves
+- do not create quarantine folders as a fallback
 
 `project-canon/` is authoritative but correctable.
 

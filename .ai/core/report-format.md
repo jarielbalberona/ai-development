@@ -40,6 +40,15 @@ Used: yes/no
 Files:
 Reason:
 
+## Root Docs Cleanup
+- Root docs existed:
+- Files/directories inspected:
+- Promoted to project-canon:
+- Moved to app/package docs:
+- Deleted:
+- Review blockers:
+- Root docs final state:
+
 ## AI Memory Update
 Updated: yes/no
 Files:

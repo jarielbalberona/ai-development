@@ -82,7 +82,7 @@ Purpose: inventory and classify stale AI/task/docs artifacts before deleting any
 
 When to use: after a project has a usable `project-canon/` baseline.
 
-What it must not do: no deletion by default, no application-code changes, no permanent quarantine folders unless explicitly approved, and no treating root-level `docs/` as normal final-state docs by default. Size or mixed content alone is not a blocker.
+What it must not do: no deletion by default, no application-code changes, no quarantine-folder fallback, and no treating root-level `docs/` as normal final-state docs by default. Size or mixed content alone is not a blocker.
 
 Next skill: `legacy-artifact-cleanup` when the user explicitly asks for the next checkpoint, or when `project-adopt-pipeline` continues under a safe mode.
 

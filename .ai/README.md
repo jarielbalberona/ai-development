@@ -23,6 +23,7 @@ Adoption boundary:
 - app/package docs are allowed only when truly local to the owning app/package
 - root `docs/` must not remain as a normal final state unless explicitly approved by the user
 - large or mixed root `docs/` trees must be processed in batches, not used as a blocker by themselves
+- do not create quarantine folders such as `docs.legacy-review/`, `legacy-review/`, `review-backup/`, or `quarantine-docs/`
 
 Canon correction:
 
@@ -36,6 +37,7 @@ Markdown/text file policy:
 - No free-floating markdown.
 - New `.md`, `.mdx`, or `.txt` files must fit an approved `.ai/` location and purpose.
 - `.ai/` is not a place for random task reports, initiative archives, handoff notes, or scratch dumps.
+- Do not create project-local docs quarantine folders.
 - If content is not reusable workflow truth or temporary active-task state, do not create it here.
 
 ## Skills

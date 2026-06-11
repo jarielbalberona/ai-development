@@ -57,8 +57,11 @@ autonomous-safe
 - May run `project-onboard` through `baseline-stabilize` without user confirmation when safe.
 - May run `legacy-artifact-cleanup` after audit when no hard stop condition exists.
 - Large or mixed root `docs/` trees must be processed in directory/topic batches, not treated as blockers by themselves.
+- Size alone is not a blocker.
+- Mixed content alone is not a blocker.
 - Full-auto continues through cleanup and into `baseline-stabilize` unless a specific hard stop condition appears.
 - Root `docs/` must not remain at the end of adoption unless the user explicitly approves it.
+- Do not preserve root `docs/` or move it into a quarantine folder.
 - Still must stop on safety boundaries.
 - Does not run `ticket-workflow` unless explicitly requested after baseline stabilization.
 
@@ -125,6 +128,7 @@ If `.ai/workspace/project-index.local.md` cannot be created or updated, return `
 - assessment/classification only
 - no deletion by default
 - large or mixed root `docs/` trees are processed in batches, not treated as blockers by themselves
+- stop only on exact `REVIEW_BLOCKER` files with reasons
 - stop after final report
 
 ### `legacy-artifact-cleanup`
@@ -173,7 +177,7 @@ Do not create project-local .agent/.
 Do not create project-local .codex/.
 Do not create random markdown.
 Do not create reports/plans/handoffs/task-notes folders.
-Do not recreate docs/ or docs.legacy-review/ as source-of-truth.
+Do not create docs quarantine folders.
 Do not commit unless explicitly asked.
 Final reports belong in chat/ticket/PR, not repo markdown.
 ```

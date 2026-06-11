@@ -51,4 +51,5 @@ Important rules:
 * Do not use Git submodules unless explicitly decided later.
 * Do not create project-local `.ai/`, `.agent/`, or `.codex/` folders.
 * Durable project truth belongs in each project's `project-canon/`.
+* Root-level `docs/` is legacy by default during adoption and should be classified, promoted, or deleted rather than moved into a quarantine folder.
 * Final task reports belong in chat/ticket/PR, not random repo markdown files.

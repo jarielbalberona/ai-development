@@ -43,7 +43,6 @@ project-local .ai/
 project-local .agent/
 project-local .codex/
 docs/
-docs.legacy-review/
 initiatives/
 reports/
 archive/
@@ -62,19 +61,18 @@ handoffs/
 6. Remove empty directories.
 7. Sweep references so no active instructions/tooling still point to removed folders/files.
 8. Do not preserve root `docs/` as a normal final state.
-9. Do not create `docs.legacy-review/`.
+9. Do not move root docs into a quarantine folder.
 
 ## Final-State Checks
 
 - root-level `docs/` does not exist unless explicitly approved by the user
-- `docs.legacy-review/` does not exist
 - no permanent quarantine folder is left behind unless explicitly approved
 
 ## Must Not Do
 
 - Do not modify application behavior.
 - Do not dump old files wholesale into `project-canon/`.
-- Do not create a new permanent quarantine folder unless explicitly approved.
+- Do not create a new quarantine folder unless the user explicitly asks for a temporary backup.
 - Do not commit.
 
 ## Constraints
@@ -86,7 +84,7 @@ Do not create project-local .agent/.
 Do not create project-local .codex/.
 Do not create random markdown.
 Do not create reports/plans/handoffs/task-notes folders.
-Do not recreate docs/ or docs.legacy-review/ as source-of-truth.
+Do not create docs quarantine folders.
 Do not commit unless explicitly asked.
 Final reports belong in chat/ticket/PR, not repo markdown.
 ```
