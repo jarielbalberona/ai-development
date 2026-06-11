@@ -68,6 +68,7 @@ projects/<domain>/
 ```
 
 - `project-canon/` is the authoritative durable project truth.
+- `project-canon/` is authoritative but correctable when current code/tests/runtime evidence proves it stale or wrong.
 - `.ai-project.md` is the project-specific AI contract.
 - `.ai-local/` is generated fallback only.
 - Project app code is version-controlled by that project's own repo.
@@ -142,9 +143,18 @@ ticket/plain issue
 ## Root Docs Policy
 
 - Root-level `docs/` is legacy by default during project adoption.
+- Large or mixed root `docs/` trees are not blockers by themselves. Process them by directory/topic batches.
 - It must be migrated into `project-canon/`, moved to truly local app/package docs, deleted, or flagged as `REVIEW_BLOCKER`.
 - Root `docs/` must not survive adoption as a normal final state unless the user explicitly approves it.
 - `docs.legacy-review/` must not become a permanent fallback.
+
+## Canon Correction
+
+- `project-canon/` is authoritative but correctable.
+- Migrated legacy-doc claims are baseline truth, not final certification.
+- When real work touches an area represented in canon, validate it against current code, tests, and runtime evidence.
+- If current evidence disproves canon, update `project-canon/` in the same task once the durable truth is clear.
+- If canon and current evidence conflict but the correct truth is unclear, report the conflict before implementation.
 
 ## Version control model
 

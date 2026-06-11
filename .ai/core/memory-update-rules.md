@@ -12,6 +12,7 @@ Update `project-canon/` when:
 - deployment/runtime behavior
 - integration behavior
 - verification expectations for the project change
+- current code/tests/runtime evidence proves existing canon is stale or wrong
 
 Update `.ai/` when:
 
@@ -54,3 +55,7 @@ Allowed destinations:
 - final task report -> chat/ticket/PR, not a random repo markdown file
 
 If the content is not durable or reusable, delete it.
+
+Migrated legacy-doc claims in `project-canon/` are baseline truth only.
+
+When work touches that area, validate them against current code/tests/runtime evidence and correct canon if needed.

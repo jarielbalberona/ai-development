@@ -44,6 +44,7 @@ Recommended sequence:
 Individual skills can still be run manually.
 
 `project-adopt-pipeline` runs sequential checkpoints and stops on safety conditions.
+In `full-auto`, large or mixed root `docs/` trees must be processed in directory/topic batches and removed by the end of adoption unless explicitly approved.
 
 ## `project-adopt-pipeline`
 
@@ -51,7 +52,7 @@ Purpose: orchestrate skills 1–6 for existing repos without starting real ticke
 
 When to use: when the user wants semi-automatic adoption of an existing repo under `projects/<domain>/`.
 
-What it must not do: no `ticket-workflow` by default, no application-behavior changes, no random markdown, and no bypassing hard stop conditions.
+What it must not do: no `ticket-workflow` by default, no application-behavior changes, no random markdown, no preserving root `docs/` as a normal final state, and no bypassing hard stop conditions.
 
 Next skill: `ticket-workflow` only after baseline stabilization and only when the user explicitly asks for real work.
 
@@ -81,7 +82,7 @@ Purpose: inventory and classify stale AI/task/docs artifacts before deleting any
 
 When to use: after a project has a usable `project-canon/` baseline.
 
-What it must not do: no deletion by default, no application-code changes, no permanent quarantine folders unless explicitly approved, and no treating root-level `docs/` as normal final-state docs by default.
+What it must not do: no deletion by default, no application-code changes, no permanent quarantine folders unless explicitly approved, and no treating root-level `docs/` as normal final-state docs by default. Size or mixed content alone is not a blocker.
 
 Next skill: `legacy-artifact-cleanup` when the user explicitly asks for the next checkpoint, or when `project-adopt-pipeline` continues under a safe mode.
 
@@ -121,6 +122,6 @@ Purpose: run the normal daily work loop for real bugs/features.
 
 When to use: after the baseline is stable and the repo is ready for normal work.
 
-What it must not do: no random markdown reports, no silent scope expansion, no E2E by default.
+What it must not do: no random markdown reports, no silent scope expansion, no E2E by default, and no silent drift between canon and current code/runtime truth.
 
 Next skill: continue ticket work only when the user explicitly asks. Loop back to canon/guardrails only when durable truth changes.

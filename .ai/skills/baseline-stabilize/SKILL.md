@@ -44,9 +44,11 @@ no real project names were added to .ai/workspace/project-index.example.md
 2. Confirm forbidden folders are absent.
 3. Confirm project canon and entry files are coherent.
 4. Confirm the local project index reflects the adopted project when the local index exists.
-5. Run the narrowest relevant checks if tooling/instructions changed.
-6. Produce a commit recommendation or readiness verdict.
-7. Stop before feature/bug work.
+5. Confirm root `docs/` is absent unless explicitly approved.
+6. Confirm `docs.legacy-review/` is absent.
+7. Run the narrowest relevant checks if tooling/instructions changed.
+8. Produce a commit recommendation or readiness verdict.
+9. Stop before feature/bug work.
 
 ## Must Not Do
 

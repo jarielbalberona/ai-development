@@ -48,6 +48,7 @@ During adoption it must be classified into:
 - `REVIEW_BLOCKER`
 
 Root-level `docs/` must not remain as a normal adopted-project final state unless the user explicitly approves it.
+Size or mixed content alone is not a blocker.
 
 ## Classification Buckets
 
@@ -105,7 +106,9 @@ duplicated docs already captured in project-canon/
 4. Keep the review list small and justified.
 5. Treat root-level `docs/` as legacy by default, not as app-local documentation by default.
 6. If a root `docs/` file is truly app/package-local, ownership must be obvious before moving it.
-5. Produce a cleanup plan. Do not delete by default.
+7. For large root `docs/` trees, process by directory/topic batches until every file or directory is classified.
+8. `REVIEW_BLOCKER` requires exact file path and reason.
+9. Produce a cleanup plan. Do not delete by default.
 
 ## Constraints
 

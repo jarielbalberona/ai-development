@@ -28,6 +28,12 @@ Anything not verified, deferred, risky, or blocked.
 Updated: yes/no
 Files:
 Reason:
+Stale canon corrected: yes/no
+
+## Canon / Runtime Conflict
+Found: yes/no
+Summary:
+Resolution:
 
 ## Legacy Docs Reference
 Used: yes/no

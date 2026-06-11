@@ -33,11 +33,15 @@ ticket/plain issue
 
 - Treat ticket/plain issue as work intent, not full truth.
 - Read relevant `project-canon/`.
+- Treat `project-canon/` as authoritative but correctable.
 - Triage before coding unless implementation is explicitly approved.
 - Do not patch symptoms.
 - Do not silently broaden scope.
 - Use appropriate verification, not E2E by default.
 - Update `project-canon/` only when durable truth changed.
+- When work touches an area represented in `project-canon/`, validate canon against current code/tests/runtime evidence.
+- If canon is stale, update it as part of the task.
+- If canon and code disagree and the correct truth is unclear, report the conflict before implementation.
 - Clean `.ai/state/` at closeout.
 - Do not create random markdown reports.
 

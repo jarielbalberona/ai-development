@@ -24,6 +24,15 @@ During adoption:
 - truly local documentation may move to app/package-local docs only when ownership is obvious
 - stale/noisy root docs are deleted
 - unresolved root docs classification is a blocker, not a reason to preserve root `docs/`
+- large or mixed root `docs/` trees must be processed by directory/topic batches, not treated as blockers by themselves
+
+`project-canon/` is authoritative but correctable.
+
+- If `project-canon/`, current code, tests, or runtime evidence disagree, surface the conflict during triage.
+- Do not silently follow stale canon.
+- Do not silently ignore canon.
+- If code/runtime evidence proves canon is stale or wrong, update `project-canon/` in the same task when the durable truth is clarified.
+- Canon entries migrated from old docs may carry bounded validation notes until confirmed by code/runtime work.
 
 Role separation:
 
@@ -88,6 +97,7 @@ For users who want semi-automatic adoption of an existing repo, use `project-ado
 Default pipeline mode is `autonomous-safe`.
 
 `full-auto` may continue further without confirmation, but it still stops on hard safety boundaries.
+In `full-auto`, large or mixed root `docs/` trees must be processed in batches and removed by the end of adoption unless the user explicitly approves an exception.
 
 Use the skills under `.ai/skills/` in this order:
 

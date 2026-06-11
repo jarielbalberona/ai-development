@@ -22,10 +22,12 @@ Rules:
 - Do not claim completion without proof.
 - If verification is incomplete, report exactly what was not verified.
 - The final report must justify the selected verification level.
+- If canon and current code/tests/runtime evidence disagree, surface the conflict and resolve it through the task instead of leaving silent drift behind.
 
 Task closeout:
 
 - update `project-canon/` if durable project truth changed
+- correct stale canon in the same task when current evidence proves it wrong and the durable truth is clear
 - update `.ai/` only if workflow/guardrail memory changed
 - clean `.ai/state/` temporary task files
 - check whether any new `.md`, `.mdx`, or `.txt` files were created

@@ -56,6 +56,9 @@ autonomous-safe
 
 - May run `project-onboard` through `baseline-stabilize` without user confirmation when safe.
 - May run `legacy-artifact-cleanup` after audit when no hard stop condition exists.
+- Large or mixed root `docs/` trees must be processed in directory/topic batches, not treated as blockers by themselves.
+- Full-auto continues through cleanup and into `baseline-stabilize` unless a specific hard stop condition appears.
+- Root `docs/` must not remain at the end of adoption unless the user explicitly approves it.
 - Still must stop on safety boundaries.
 - Does not run `ticket-workflow` unless explicitly requested after baseline stabilization.
 
@@ -86,6 +89,7 @@ Do not automatically continue when a stop condition exists or when the user spec
 - Legacy artifact contains possible durable truth that cannot be confidently migrated.
 - Root-level `docs/` contains files that cannot be safely classified.
 - Cleanup would need to preserve root-level `docs/` without explicit user approval.
+- File ownership is unclear and deletion risks active app/package docs.
 - Cleanup would delete package-owned docs, app-owned docs, or source-adjacent files with unclear ownership.
 - Cleanup requires application behavior changes.
 - Active code/tests/tooling depend on a stale file and fixing that would modify app behavior.
@@ -120,6 +124,7 @@ If `.ai/workspace/project-index.local.md` cannot be created or updated, return `
 
 - assessment/classification only
 - no deletion by default
+- large or mixed root `docs/` trees are processed in batches, not treated as blockers by themselves
 - stop after final report
 
 ### `legacy-artifact-cleanup`
@@ -217,6 +222,15 @@ Gitignored: yes/no
 ## Workspace AI Updates
 
 ## Deleted Files / Folders
+
+## Root Docs Cleanup
+- Root docs existed:
+- Files/directories inspected:
+- Promoted to project-canon:
+- Moved to app/package docs:
+- Deleted:
+- Review blockers:
+- Root docs final state:
 
 ## Markdown Hygiene
 

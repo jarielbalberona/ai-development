@@ -1,6 +1,7 @@
 # Docs Grounding Rules
 
 - `project-canon/` is the authoritative curated project truth.
+- `project-canon/` is authoritative but correctable.
 - `docs/` is legacy/reference/unstructured docs.
 - `.ai/` is the shared agent operating system.
 - `.ai/` is not the authoritative project source of truth.
@@ -35,3 +36,17 @@ Before implementation, factor in:
 - runtime evidence where available
 
 If project-canon/, docs/, code, ticket, and runtime behavior disagree, surface the conflict during triage instead of silently choosing one.
+
+Current code/tests/runtime evidence may reveal stale canon.
+
+Do not silently follow stale canon.
+
+Do not silently ignore canon.
+
+Surface the conflict and resolve it through the task.
+
+Migrated legacy-doc claims are baseline truth, not final certification.
+
+When work touches an area represented by migrated canon, validate the claim against current code/tests/runtime evidence.
+
+If validation disproves the migrated claim, update `project-canon/`.

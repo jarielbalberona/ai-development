@@ -22,6 +22,14 @@ Adoption boundary:
 - `project-canon/` is the destination for durable project truth
 - app/package docs are allowed only when truly local to the owning app/package
 - root `docs/` must not remain as a normal final state unless explicitly approved by the user
+- large or mixed root `docs/` trees must be processed in batches, not used as a blocker by themselves
+
+Canon correction:
+
+- `project-canon/` is authoritative but correctable
+- migrated legacy-doc claims are baseline truth, not final certification
+- when work touches a canon area, validate migrated claims against current code/tests/runtime evidence
+- if canon is stale, update it as part of the task
 
 Markdown/text file policy:
 

@@ -61,6 +61,8 @@ handoffs/
 5. Delete stale/noisy artifacts aggressively once truth is promoted or confirmed absent.
 6. Remove empty directories.
 7. Sweep references so no active instructions/tooling still point to removed folders/files.
+8. Do not preserve root `docs/` as a normal final state.
+9. Do not create `docs.legacy-review/`.
 
 ## Final-State Checks
 
