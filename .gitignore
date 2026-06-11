@@ -1,0 +1,16 @@
+# Product/application repos are versioned separately.
+projects/
+
+# OS/editor noise
+.DS_Store
+.idea/
+.vscode/
+
+# Temporary AI working memory
+.ai/state/*
+!.ai/state/README.md
+
+# Logs / temp
+*.log
+tmp/
+temp/
