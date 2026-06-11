@@ -161,6 +161,70 @@ ticket or pasted issue or work item
 - Never modify sibling projects unless explicitly requested.
 - If invoked inside a project, default target project is that project.
 
+## Prerequisite Self-Heal Mode
+
+A prerequisite blocker that is likely fixable inside the repo or local setup should be self-healed before returning final `FAIL` or `BLOCKED`.
+
+Distinguish these before deciding the final verdict:
+
+- Product/work failure: the requested behavior, code path, or acceptance condition is still wrong after implementation.
+- Verification prerequisite blocker: the implementation or verification step cannot run because a local prerequisite, invocation, generated artifact, fixture, service, or setup assumption is broken.
+
+Examples of self-healable blockers:
+
+- missing declared dependency or unresolved package/module
+- stale dev server, test server, cache, or local process
+- wrong package/script invocation
+- package manager workspace mismatch
+- generated file/snapshot/fallback out of date
+- test fixture/reference path mismatch
+- local service not running but startable
+- local config/env mismatch detectable from committed files
+- static check failure caused by the current task scope
+- test failure caused by a narrow, identifiable setup issue
+
+Examples of hard blockers:
+
+- missing credentials/secrets
+- inaccessible private package registry or private dependency
+- external service outage
+- required hardware unavailable
+- destructive framework/runtime migration required
+- broad dependency upgrade required
+- unrelated dirty worktree prevents safe patching
+- security-sensitive change requiring user approval
+- unclear ownership of files that would need deletion/modification
+- repeated failure after bounded self-heal attempts
+
+Self-heal loop:
+
+1. Identify the failed prerequisite.
+2. Classify it as self-healable or hard-blocked.
+3. Inspect the smallest relevant surface.
+4. Apply the smallest safe fix.
+5. Rerun the failed command or verification step.
+6. Continue the original work goal.
+7. Stop only after max attempts or a hard blocker.
+
+Default max attempts:
+
+- 2 self-heal attempts per distinct prerequisite blocker.
+
+If the same blocker remains after 2 attempts:
+
+- return `FAIL` or `BLOCKED` with exact evidence.
+
+Rules:
+
+- Do not turn a narrow blocker into a broad rewrite.
+- Do not perform major framework/runtime upgrades without explicit approval.
+- Do not install or remove dependencies blindly.
+- Do not modify unrelated application behavior.
+- Do not claim verification proof until the original failed verification step has been rerun successfully.
+- If the self-heal changes durable project truth, update `project-canon/`.
+- If the self-heal reveals a reusable workflow rule, update parent `.ai/`.
+- Clean `.ai/state/` at closeout.
+
 ## Constraints
 
 ```txt
@@ -192,6 +256,7 @@ AI Memory Update
 AI State Cleanup
 Markdown File Hygiene
 Verification Selection, where applicable
+Self-Heal Attempts, where applicable
 ```
 
 Use the shared report format from:
@@ -210,4 +275,25 @@ Use the shared report format from:
 - Shared rules source:
 - Fallback used: yes/no
 - Project canon:
+```
+
+## Self-Heal Attempts
+
+```md
+## Self-Heal Attempts
+Attempted: yes/no
+
+### Attempt 1
+Blocker:
+Classification:
+Fix attempted:
+Result:
+
+### Attempt 2
+Blocker:
+Classification:
+Fix attempted:
+Result:
+
+Final blocker status:
 ```

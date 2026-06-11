@@ -20,6 +20,7 @@ Rules:
 - Before running checks, choose the verification level based on the failure boundary.
 - Do not default to E2E.
 - Do not stop at typecheck for behavioral issues.
+- If implementation or verification is blocked by a likely fixable prerequisite issue, attempt bounded self-heal before returning final `FAIL` or `BLOCKED`.
 - Do not claim completion without proof.
 - If verification is incomplete, report exactly what was not verified.
 - The final report must justify the selected verification level.

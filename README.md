@@ -116,6 +116,7 @@ ticket/plain issue
 → project-canon grounding
 → code/runtime investigation
 → minimal implementation
+→ bounded self-heal for fixable prerequisite blockers, if needed
 → appropriate verification
 → project-canon update if durable truth changed
 → .ai update only if workflow memory changed
@@ -130,6 +131,8 @@ ticket/plain issue
 - Use the narrowest reliable proof based on failure boundary and risk.
 - Do not stop at typecheck for behavioral issues.
 - Do not claim device/printer/offline/reconnect proof without actual proof.
+- If verification is blocked by a likely fixable local prerequisite, apply bounded self-heal before a final `FAIL` or `BLOCKED` verdict.
+- Do not claim verification proof until the original failed verification step has been rerun successfully.
 
 ## Markdown/file hygiene
 

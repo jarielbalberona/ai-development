@@ -17,6 +17,25 @@ User-visible or system-visible behavior changes.
 Selected verification level:
 Reason:
 Why E2E was/was not needed:
+Self-heal used before final verdict: yes/no
+Reason:
+
+## Self-Heal Attempts
+Attempted: yes/no
+
+### Attempt 1
+Blocker:
+Classification:
+Fix attempted:
+Result:
+
+### Attempt 2
+Blocker:
+Classification:
+Fix attempted:
+Result:
+
+Final blocker status:
 
 ## Verification
 Commands, tests, local runtime checks, browser checks, device checks, DB checks.

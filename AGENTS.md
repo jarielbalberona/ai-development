@@ -34,6 +34,8 @@ During adoption:
 - Do not silently ignore canon.
 - If code/runtime evidence proves canon is stale or wrong, update `project-canon/` in the same task when the durable truth is clarified.
 - Canon entries migrated from old docs may carry bounded validation notes until confirmed by code/runtime work.
+- If implementation or verification is blocked by a likely fixable local prerequisite, apply bounded self-heal before returning final `FAIL` or `BLOCKED`.
+- Do not claim verification proof until the original failed verification step has been rerun successfully.
 
 Role separation:
 

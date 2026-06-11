@@ -62,6 +62,8 @@ Default pipeline mode is `autonomous-safe`.
 
 `execute-work` starts only after baseline stabilization and is not part of default project adoption.
 
+During `execute-work`, likely fixable prerequisite blockers should receive bounded self-heal before final `FAIL` or `BLOCKED`; the original failed verification step still has to pass before proof is claimed.
+
 ## Project Index
 
 The committed project index template is:

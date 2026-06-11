@@ -34,6 +34,10 @@ The agent must choose verification based on the failure boundary, affected surfa
 
 Use the narrowest reliable proof that would catch the bug if it regressed.
 
+If verification is blocked by a prerequisite/environment/tooling issue that is likely fixable inside the repo or local setup, run bounded self-heal before returning `FAIL` or `BLOCKED`.
+
+Do not count a self-heal as verification proof. The original failed verification step must be rerun successfully before claiming that verification passed.
+
 Preferred escalation order:
 
 1. Static checks — typecheck, lint, import/build sanity
