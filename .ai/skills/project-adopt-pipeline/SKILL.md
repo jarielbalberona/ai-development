@@ -79,7 +79,7 @@ Each child skill must still be treated as a checkpoint with its own final report
 
 Do not automatically continue when a stop condition exists or when the user specifically requested stop-after-current-skill.
 
-## Hard Stop Conditions
+## Hard stop conditions
 
 - Current skill returns `PASS WITH ISSUES`, `FAIL`, or `BLOCKED`.
 - Any `REVIEW` classification exists.

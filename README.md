@@ -19,7 +19,7 @@ It is built around:
 - This does not version-control project application code.
 - This does not replace each project's Git repo.
 - This is not a dumping ground for task reports or random markdown.
-- This is not Claude/Codex-specific; it is agent-agnostic.
+- This is agent-agnostic and not tied to any single assistant or tool.
 
 ## Repository structure
 
@@ -76,6 +76,10 @@ Each skill must stop after its final report.
 
 Do not automatically run the next skill unless the user explicitly asks.
 
+Optional onboarding entrypoint:
+
+0. `project-adopt-pipeline` — orchestrate adoption checkpoints in `safe`, `autonomous-safe`, or `full-auto` mode while still stopping on safety boundaries.
+
 1. `project-onboard` — structurally attach an existing repo to the workspace model.
 2. `project-canon-seed` — create the first useful `project-canon/` baseline from light inspection.
 3. `legacy-artifact-audit` — inventory and classify stale AI/task/docs artifacts before deletion.
@@ -89,12 +93,10 @@ Do not automatically run the next skill unless the user explicitly asks.
 High-level example using `projects/example-saas/`:
 
 1. Place or move the existing repo under `projects/example-saas/`
-2. Run/use `.ai/skills/project-onboard/SKILL.md`
-3. Run/use `.ai/skills/project-canon-seed/SKILL.md`
-4. Audit and clean legacy artifacts if needed
-5. Add project guardrails and verification profile
-6. Stabilize baseline
-7. Start real ticket work
+2. Option A: run/use `.ai/skills/project-adopt-pipeline/SKILL.md` in `autonomous-safe` mode
+3. Option B: run the individual skills manually in sequence starting with `.ai/skills/project-onboard/SKILL.md`
+4. Continue through canon seeding, artifact audit/cleanup, guardrails, and baseline stabilization
+5. Start real ticket work only after the adoption baseline is stable
 
 ## How real work should happen
 
