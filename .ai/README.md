@@ -16,6 +16,13 @@ Role separation:
 - Reusable workflow truth belongs in `.ai/core/` or `.ai/workspace/`.
 - `.ai-local/` is generated fallback output only, not canonical memory.
 
+Adoption boundary:
+
+- root-level `docs/` is legacy by default during adoption
+- `project-canon/` is the destination for durable project truth
+- app/package docs are allowed only when truly local to the owning app/package
+- root `docs/` must not remain as a normal final state unless explicitly approved by the user
+
 Markdown/text file policy:
 
 - No free-floating markdown.
@@ -58,3 +65,9 @@ For local/private project routing, create:
 Agents should prefer `project-index.local.md` when it exists. If it does not exist, use `project-index.example.md` only as a format reference and infer the target project from the user's explicit target path or instruction.
 
 Do not commit real/private project indexes.
+
+When a project is onboarded or adopted, update `.ai/workspace/project-index.local.md` if it exists.
+
+If it does not exist, create it from `.ai/workspace/project-index.example.md` and add the adopted project entry.
+
+Do not update `.ai/workspace/project-index.example.md` with real project names.

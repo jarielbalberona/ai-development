@@ -30,14 +30,23 @@ stale reference sweeps clean
 targeted checks if tooling changed
 ```
 
+Also confirm:
+
+```txt
+the adopted project appears in .ai/workspace/project-index.local.md when that file exists
+.ai/workspace/project-index.local.md is gitignored
+no real project names were added to .ai/workspace/project-index.example.md
+```
+
 ## Workflow
 
 1. Review all dirty changes and classify them.
 2. Confirm forbidden folders are absent.
 3. Confirm project canon and entry files are coherent.
-4. Run the narrowest relevant checks if tooling/instructions changed.
-5. Produce a commit recommendation or readiness verdict.
-6. Stop before feature/bug work.
+4. Confirm the local project index reflects the adopted project when the local index exists.
+5. Run the narrowest relevant checks if tooling/instructions changed.
+6. Produce a commit recommendation or readiness verdict.
+7. Stop before feature/bug work.
 
 ## Must Not Do
 
@@ -65,6 +74,17 @@ Final reports belong in chat/ticket/PR, not repo markdown.
 Baseline is ready to commit or ready for real ticket work.
 
 Stop after the final report. Do not automatically run `ticket-workflow`.
+
+## Project Index Update
+
+```md
+## Project Index Update
+Updated: yes/no
+File:
+Entry:
+Gitignored: yes/no
+Notes:
+```
 
 ## Closeout
 

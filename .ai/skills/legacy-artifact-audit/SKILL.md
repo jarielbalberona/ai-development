@@ -37,6 +37,18 @@ old task reports
 old assessment files
 ```
 
+Root-level `docs/` is legacy by default during project adoption.
+
+During adoption it must be classified into:
+
+- `PROMOTE_TO_PROJECT_CANON`
+- `MOVE_TO_APP_OR_PACKAGE_DOCS`
+- `DELETE_STALE`
+- `DELETE_NOISE`
+- `REVIEW_BLOCKER`
+
+Root-level `docs/` must not remain as a normal adopted-project final state unless the user explicitly approves it.
+
 ## Classification Buckets
 
 Use:
@@ -47,7 +59,7 @@ PROMOTE_TO_PROJECT_CANON
 PROMOTE_TO_WORKSPACE_AI
 DELETE_STALE
 DELETE_NOISE
-REVIEW
+REVIEW_BLOCKER
 ```
 
 ## Durable Project Truth
@@ -91,6 +103,8 @@ duplicated docs already captured in project-canon/
 2. Read only enough to classify safely.
 3. Separate durable project truth from workflow truth and from noise.
 4. Keep the review list small and justified.
+5. Treat root-level `docs/` as legacy by default, not as app-local documentation by default.
+6. If a root `docs/` file is truly app/package-local, ownership must be obvious before moving it.
 5. Produce a cleanup plan. Do not delete by default.
 
 ## Constraints

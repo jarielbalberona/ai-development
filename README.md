@@ -48,6 +48,12 @@ Agents should prefer `project-index.local.md` when it exists. If it does not exi
 
 Do not commit real/private project indexes.
 
+When a project is onboarded or adopted, update `.ai/workspace/project-index.local.md` if it exists.
+
+If it does not exist, create it from `.ai/workspace/project-index.example.md` and add the adopted project entry.
+
+Do not update `.ai/workspace/project-index.example.md` with real project names.
+
 ## Project structure
 
 Each onboarded project should have:
@@ -65,6 +71,8 @@ projects/<domain>/
 - `.ai-project.md` is the project-specific AI contract.
 - `.ai-local/` is generated fallback only.
 - Project app code is version-controlled by that project's own repo.
+- Root-level `docs/` is not a normal final state for adopted projects.
+- App/package docs are allowed only when they are truly local to the owning app/package.
 
 ## Sequential skills
 
@@ -83,7 +91,7 @@ Optional onboarding entrypoint:
 1. `project-onboard` — structurally attach an existing repo to the workspace model.
 2. `project-canon-seed` — create the first useful `project-canon/` baseline from light inspection.
 3. `legacy-artifact-audit` — inventory and classify stale AI/task/docs artifacts before deletion.
-4. `legacy-artifact-cleanup` — promote useful truth and remove stale/noisy artifacts.
+4. `legacy-artifact-cleanup` — promote useful truth and remove stale/noisy artifacts, including eliminating root-level `docs/` unless explicitly approved.
 5. `project-guardrails-profile` — define project-specific guardrails and verification profile.
 6. `baseline-stabilize` — review the accumulated baseline changes before real work starts.
 7. `ticket-workflow` — run the normal daily bug/feature loop after baseline readiness.
@@ -96,7 +104,8 @@ High-level example using `projects/example-saas/`:
 2. Option A: run/use `.ai/skills/project-adopt-pipeline/SKILL.md` in `autonomous-safe` mode
 3. Option B: run the individual skills manually in sequence starting with `.ai/skills/project-onboard/SKILL.md`
 4. Continue through canon seeding, artifact audit/cleanup, guardrails, and baseline stabilization
-5. Start real ticket work only after the adoption baseline is stable
+5. Ensure `.ai/workspace/project-index.local.md` is updated for the adopted project
+6. Start real ticket work only after the adoption baseline is stable
 
 ## How real work should happen
 
@@ -129,6 +138,13 @@ ticket/plain issue
 - Reusable workflow truth goes to `.ai/core/` or `.ai/workspace/`.
 - Temporary task memory goes to `.ai/state/` and must be cleaned.
 - Do not create project-local `.ai/`, `.agent/`, `.codex/`, `docs/`, `docs.legacy-review/`, `reports/`, `initiatives/`, `task-notes/`, or `plans/` unless explicitly approved.
+
+## Root Docs Policy
+
+- Root-level `docs/` is legacy by default during project adoption.
+- It must be migrated into `project-canon/`, moved to truly local app/package docs, deleted, or flagged as `REVIEW_BLOCKER`.
+- Root `docs/` must not survive adoption as a normal final state unless the user explicitly approves it.
+- `docs.legacy-review/` must not become a permanent fallback.
 
 ## Version control model
 

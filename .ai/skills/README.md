@@ -24,6 +24,12 @@ Agents should prefer `project-index.local.md` when it exists. If it does not exi
 
 Do not commit real/private project indexes.
 
+When a project is onboarded or adopted, update `.ai/workspace/project-index.local.md` if it exists.
+
+If `project-index.local.md` does not exist, create it from `project-index.example.md` and add the adopted project entry.
+
+Do not update `project-index.example.md` with real project names.
+
 Recommended sequence:
 
 0. `project-adopt-pipeline` (optional orchestrator)
@@ -75,7 +81,7 @@ Purpose: inventory and classify stale AI/task/docs artifacts before deleting any
 
 When to use: after a project has a usable `project-canon/` baseline.
 
-What it must not do: no deletion by default, no application-code changes, no permanent quarantine folders unless explicitly approved.
+What it must not do: no deletion by default, no application-code changes, no permanent quarantine folders unless explicitly approved, and no treating root-level `docs/` as normal final-state docs by default.
 
 Next skill: `legacy-artifact-cleanup` when the user explicitly asks for the next checkpoint, or when `project-adopt-pipeline` continues under a safe mode.
 
@@ -85,7 +91,7 @@ Purpose: execute the cleanup plan from `legacy-artifact-audit`.
 
 When to use: after artifact classification is complete and approved by scope.
 
-What it must not do: no application-behavior changes, no wholesale dumping of stale files into canon, no commit unless explicitly asked.
+What it must not do: no application-behavior changes, no wholesale dumping of stale files into canon, no preserving root-level `docs/` as a normal final state without explicit approval, and no commit unless explicitly asked.
 
 Next skill: `project-guardrails-profile` when the user explicitly asks for the next checkpoint, or when `project-adopt-pipeline` continues under a safe mode.
 

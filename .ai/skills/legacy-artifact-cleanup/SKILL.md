@@ -56,9 +56,17 @@ handoffs/
 
 1. Start from the audit classification, not from guesswork.
 2. Promote only the durable slice of any stale artifact.
-3. Delete stale/noisy artifacts aggressively once truth is promoted or confirmed absent.
-4. Remove empty directories.
-5. Sweep references so no active instructions/tooling still point to removed folders/files.
+3. Treat root-level `docs/` as legacy by default. Do not preserve it as a normal final state unless the user explicitly approves it.
+4. Move root `docs/` content to app/package-local docs only when ownership is obvious.
+5. Delete stale/noisy artifacts aggressively once truth is promoted or confirmed absent.
+6. Remove empty directories.
+7. Sweep references so no active instructions/tooling still point to removed folders/files.
+
+## Final-State Checks
+
+- root-level `docs/` does not exist unless explicitly approved by the user
+- `docs.legacy-review/` does not exist
+- no permanent quarantine folder is left behind unless explicitly approved
 
 ## Must Not Do
 

@@ -4,7 +4,7 @@ This workspace is agent-agnostic.
 All product/application repos live under `projects/`.
 Shared workflow rules live under `.ai/core/`.
 Each project owns `project-canon/` as curated authoritative source of truth.
-Existing `docs/` folders are legacy/reference unless a project explicitly says otherwise.
+Existing root-level `docs/` folders are legacy/reference unless a project explicitly says otherwise.
 Each project has `.ai-project.md` as the project-specific contract.
 Each project has `.ai-local/core-snapshot.md` as generated fallback.
 Default verification is `Local-Verified`.
@@ -16,6 +16,15 @@ This workspace uses **Ticket-First, Docs-Grounded, Local-Verified Closed Loop**.
 
 `Docs-Grounded` means the agent should ground itself primarily in `project-canon/`, with `docs/` used only as supporting legacy/reference material when present.
 
+Root-level `docs/` is not a normal adopted-project final state.
+
+During adoption:
+
+- durable project truth goes to `project-canon/`
+- truly local documentation may move to app/package-local docs only when ownership is obvious
+- stale/noisy root docs are deleted
+- unresolved root docs classification is a blocker, not a reason to preserve root `docs/`
+
 Role separation:
 
 - `project-canon/` is the authoritative project source of truth for durable product, domain, architecture, operations, integration, permission, workflow, and verification truth.
@@ -23,6 +32,28 @@ Role separation:
 - `.ai/` must not become a second docs folder or a duplicate of `project-canon/` except for workflow pointers/summaries required by the operating model.
 - `.ai-local/` is a generated fallback snapshot only. It is not canonical.
 - `.ai/state/` is temporary task working state only and must be cleaned at task closeout.
+
+## Project Index
+
+The committed project index template is:
+
+- `.ai/workspace/project-index.example.md`
+
+For local/private project routing, use:
+
+- `.ai/workspace/project-index.local.md`
+
+`project-index.local.md` is gitignored and may contain real project names, paths, status, and notes.
+
+Agents should prefer `project-index.local.md` when it exists.
+
+When a project is onboarded or adopted, update `.ai/workspace/project-index.local.md` if it exists.
+
+If it does not exist, create it from `.ai/workspace/project-index.example.md` and add the adopted project entry.
+
+Do not update `.ai/workspace/project-index.example.md` with real project names.
+
+Do not commit `.ai/workspace/project-index.local.md`.
 
 ## Markdown File Creation Policy
 

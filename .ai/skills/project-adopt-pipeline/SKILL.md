@@ -84,6 +84,8 @@ Do not automatically continue when a stop condition exists or when the user spec
 - Current skill returns `PASS WITH ISSUES`, `FAIL`, or `BLOCKED`.
 - Any `REVIEW` classification exists.
 - Legacy artifact contains possible durable truth that cannot be confidently migrated.
+- Root-level `docs/` contains files that cannot be safely classified.
+- Cleanup would need to preserve root-level `docs/` without explicit user approval.
 - Cleanup would delete package-owned docs, app-owned docs, or source-adjacent files with unclear ownership.
 - Cleanup requires application behavior changes.
 - Active code/tests/tooling depend on a stale file and fixing that would modify app behavior.
@@ -94,6 +96,8 @@ Do not automatically continue when a stop condition exists or when the user spec
 - The agent would need to create forbidden folders or random markdown.
 - User specifically requested stop-after-current-skill.
 
+If `.ai/workspace/project-index.local.md` cannot be created or updated, return `PASS WITH ISSUES` unless project adoption itself is otherwise blocked.
+
 ## Skill Boundaries
 
 ### `project-onboard`
@@ -103,6 +107,7 @@ Do not automatically continue when a stop condition exists or when the user spec
 - do not audit/delete legacy artifacts
 - do not define project guardrails
 - do not start ticket work
+- ensure `.ai/workspace/project-index.local.md` is created or updated for the adopted project
 - stop after final report
 
 ### `project-canon-seed`
@@ -121,6 +126,7 @@ Do not automatically continue when a stop condition exists or when the user spec
 
 - destructive cleanup allowed only when explicitly invoked by this orchestration mode or directly by user request
 - delete only after promotion/classification
+- root-level `docs/` must not remain as a normal final state unless the user explicitly approves it
 - stop after final report
 
 ### `project-guardrails-profile`
@@ -150,6 +156,8 @@ Continue/Stop decision
 Reason
 Next skill
 ```
+
+During the `project-onboard` checkpoint, the pipeline must ensure the local project index is updated.
 
 ## Constraints
 
@@ -197,6 +205,12 @@ safe / autonomous-safe / full-auto
 
 ## Stop / Continue Decisions
 List each checkpoint decision.
+
+## Project Index Update
+Updated: yes/no
+File:
+Entry:
+Gitignored: yes/no
 
 ## Project Canon Updates
 

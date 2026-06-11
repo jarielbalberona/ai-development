@@ -29,6 +29,8 @@ config files
 existing obvious docs
 ```
 
+Root-level `docs/` is legacy input during adoption, not a normal final-state documentation location.
+
 Populate or update:
 
 ```txt
@@ -67,6 +69,7 @@ project-canon/changelog/README.md
 3. Populate the canon baseline with current, bounded, durable truth.
 4. Mark unknowns explicitly instead of guessing.
 5. If any statement comes from old docs, mark it as migrated and needing validation.
+6. Do not let root-level `docs/` survive canon seeding as an implied approved final state.
 6. Stop before deep architecture assessment or cleanup.
 
 ## Must Not Do
