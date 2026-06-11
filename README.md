@@ -30,7 +30,7 @@ It is built around:
 - `.ai/workspace/` — workspace project index and conventions.
 - `.ai/scripts/` — utility scripts.
 - `.ai/templates/` — reusable scaffolding templates.
-- `projects/` — ignored folder containing actual project repos.
+- `projects/` — parent folder tracked only for `projects/README.md`; all actual project folders under `projects/*` are ignored and version-controlled separately.
 
 ## Project Index
 
@@ -133,7 +133,7 @@ ticket/plain issue
 ## Version control model
 
 - This repo tracks the AI workspace only.
-- `projects/` is ignored by this repo.
+- The parent repo tracks only `projects/README.md`; all actual project folders under `projects/*` are ignored and version-controlled separately.
 - Each project under `projects/` keeps its own Git history and remote.
 - Do not use Git submodules unless explicitly decided later.
 

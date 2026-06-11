@@ -1,5 +1,6 @@
 # Product/application repos are versioned separately.
-projects/
+projects/*
+!projects/README.md
 
 # Local/private project routing
 .ai/workspace/project-index.local.md
