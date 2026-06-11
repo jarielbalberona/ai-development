@@ -75,7 +75,7 @@ Final reports belong in chat/ticket/PR, not repo markdown.
 
 Baseline is ready to commit or ready for real ticket work.
 
-Stop after the final report. Do not automatically run `ticket-workflow`.
+Stop after the final report. Do not automatically run `execute-work`.
 
 ## Project Index Update
 

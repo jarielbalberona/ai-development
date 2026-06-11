@@ -4,7 +4,7 @@ Triage is read-only.
 
 During triage, the agent must:
 
-- Understand the ticket or pasted issue.
+- Understand the formal ticket, pasted issue, or direct work item.
 - Inspect relevant docs and code.
 - Separate symptom from likely root cause.
 - Identify affected surfaces.
@@ -18,4 +18,3 @@ During triage, the agent must not:
 - Create migrations.
 - Broaden scope silently.
 - Treat the ticket as the only source of truth.
-

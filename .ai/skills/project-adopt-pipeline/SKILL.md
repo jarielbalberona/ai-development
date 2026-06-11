@@ -13,7 +13,7 @@ This skill coordinates skills 1–6 only:
 5. `project-guardrails-profile`
 6. `baseline-stabilize`
 
-It does not run `ticket-workflow` by default. Real feature/bug work starts only after adoption baseline is stable and explicitly requested.
+It does not run `execute-work` by default. Real feature/bug/refactor work starts only after adoption baseline is stable and explicitly requested.
 
 ## Inputs
 
@@ -63,7 +63,7 @@ autonomous-safe
 - Root `docs/` must not remain at the end of adoption unless the user explicitly approves it.
 - Do not preserve root `docs/` or move it into a quarantine folder.
 - Still must stop on safety boundaries.
-- Does not run `ticket-workflow` unless explicitly requested after baseline stabilization.
+- Does not run `execute-work` unless explicitly requested after baseline stabilization.
 
 ## Pipeline Sequence
 
@@ -149,7 +149,7 @@ If `.ai/workspace/project-index.local.md` cannot be created or updated, return `
 - do not start feature/bug work
 - stop after final report
 
-### `ticket-workflow`
+### `execute-work`
 
 - normal real work loop after project baseline is ready
 - do not run as part of adoption unless explicitly requested after baseline stabilization
@@ -186,7 +186,7 @@ Final reports belong in chat/ticket/PR, not repo markdown.
 
 An adoption-baseline result that stops at `baseline-stabilize` or earlier if safety boundaries require it.
 
-Do not run ticket-workflow by default.
+Do not run execute-work by default.
 
 ## Final Pipeline Report
 

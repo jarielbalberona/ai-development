@@ -1,8 +1,8 @@
-# Ticket Workflow
+# Execute Work
 
 ## Purpose
 
-Normal daily work loop for real bugs/features.
+Normal real-work loop for bugs, features, refactors, follow-ups, and work items.
 
 ## Inputs
 
@@ -12,16 +12,24 @@ Project path
 Mode or phase, if applicable
 Optional previous project name
 Optional known surfaces
+Formal ticket
+Pasted issue
+Plain bug report
+Feature request
+Refactor request
+Assessment result approved for implementation
+Direct user task
 ```
 
 ## Workflow
 
 ```txt
-ticket/plain issue
+ticket or pasted issue or work item
+→ intake
 → triage
 → project-canon grounding
 → code/runtime investigation
-→ minimal implementation
+→ smallest safe implementation
 → appropriate verification
 → project-canon update if durable truth changed
 → .ai update only if workflow memory changed
@@ -31,12 +39,15 @@ ticket/plain issue
 
 ## Required Behavior
 
-- Treat ticket/plain issue as work intent, not full truth.
+- Treat a formal ticket, pasted issue, bug report, feature request, refactor request, approved assessment follow-up, or direct user task as the work-intent artifact.
+- Use a formal ticket when one exists. Otherwise treat the pasted issue or direct user request as the work-intent artifact.
 - Read relevant `project-canon/`.
 - Treat `project-canon/` as authoritative but correctable.
+- Do intake first.
 - Triage before coding unless implementation is explicitly approved.
 - Do not patch symptoms.
 - Do not silently broaden scope.
+- Use the smallest safe implementation.
 - Use appropriate verification, not E2E by default.
 - Update `project-canon/` only when durable truth changed.
 - When work touches an area represented in `project-canon/`, validate canon against current code/tests/runtime evidence.

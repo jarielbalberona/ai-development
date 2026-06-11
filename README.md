@@ -8,7 +8,7 @@ It is built around:
 
 `Ticket-First, Docs-Grounded, Local-Verified Closed Loop`
 
-- Ticket-First: work starts from a ticket or pasted issue.
+- Ticket-First: use a formal ticket when one exists; otherwise treat the pasted issue or direct user request as the work-intent artifact.
 - Docs-Grounded: agents ground work in each project's `project-canon/`.
 - Local-Verified: agents verify using the narrowest reliable local/runtime proof.
 - Closed Loop: triage, implement, verify, report, update canon/memory, clean temporary state.
@@ -95,7 +95,7 @@ Optional onboarding entrypoint:
 4. `legacy-artifact-cleanup` — promote useful truth and remove stale/noisy artifacts, including eliminating root-level `docs/` unless explicitly approved.
 5. `project-guardrails-profile` — define project-specific guardrails and verification profile.
 6. `baseline-stabilize` — review the accumulated baseline changes before real work starts.
-7. `ticket-workflow` — run the normal daily bug/feature loop after baseline readiness.
+7. `execute-work` — run the normal daily work loop for bugs, features, refactors, follow-ups, and work items after baseline readiness.
 
 ## How to onboard an existing project
 

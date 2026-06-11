@@ -23,7 +23,7 @@ Markdown discipline:
 - Reusable workflow documentation belongs in `.ai/core/` or `.ai/workspace/`.
 - Temporary task notes belong only in `.ai/state/` during active work and must be cleaned at closeout.
 
-The ticket or pasted issue is the entry point, not the full source of truth.
+The formal ticket, pasted issue, or direct user task is the entry point, not the full source of truth.
 
 Before implementation, factor in:
 

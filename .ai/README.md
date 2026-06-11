@@ -60,6 +60,8 @@ Default pipeline mode is `autonomous-safe`.
 
 `full-auto` still stops on hard safety boundaries.
 
+`execute-work` starts only after baseline stabilization and is not part of default project adoption.
+
 ## Project Index
 
 The committed project index template is:

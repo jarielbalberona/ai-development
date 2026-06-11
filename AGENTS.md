@@ -109,7 +109,7 @@ Use the skills under `.ai/skills/` in this order:
 4. `legacy-artifact-cleanup`
 5. `project-guardrails-profile`
 6. `baseline-stabilize`
-7. `ticket-workflow`
+7. `execute-work`
 
 Each skill has a narrow scope and stop point.
 

@@ -32,7 +32,7 @@ Recommended adoption path:
    * `legacy-artifact-cleanup`
    * `project-guardrails-profile`
    * `baseline-stabilize`
-   * `ticket-workflow`
+   * `execute-work`
 
 Each onboarded project should eventually contain:
 

@@ -1,6 +1,7 @@
 # Execution Loop
 
-Ticket / pasted issue
+Ticket / pasted issue / work item
+→ intake
 → triage
 → project-canon + repo grounding
 → spec finalization

@@ -39,7 +39,7 @@ Recommended sequence:
 4. `legacy-artifact-cleanup`
 5. `project-guardrails-profile`
 6. `baseline-stabilize`
-7. `ticket-workflow`
+7. `execute-work`
 
 Individual skills can still be run manually.
 
@@ -52,9 +52,9 @@ Purpose: orchestrate skills 1–6 for existing repos without starting real ticke
 
 When to use: when the user wants semi-automatic adoption of an existing repo under `projects/<domain>/`.
 
-What it must not do: no `ticket-workflow` by default, no application-behavior changes, no random markdown, no preserving root `docs/` as a normal final state, and no bypassing hard stop conditions.
+What it must not do: no `execute-work` by default, no application-behavior changes, no random markdown, no preserving root `docs/` as a normal final state, and no bypassing hard stop conditions.
 
-Next skill: `ticket-workflow` only after baseline stabilization and only when the user explicitly asks for real work.
+Next skill: `execute-work` only after baseline stabilization and only when the user explicitly asks for real work.
 
 ## `project-onboard`
 
@@ -114,14 +114,14 @@ When to use: just before first real ticket work or commit preparation.
 
 What it must not do: no new product claims, no broad validation, no feature/bug implementation.
 
-Next skill: `ticket-workflow` when the user explicitly asks for the next checkpoint. It is not part of default adoption.
+Next skill: `execute-work` when the user explicitly asks for the next checkpoint. It is not part of default adoption.
 
-## `ticket-workflow`
+## `execute-work`
 
-Purpose: run the normal daily work loop for real bugs/features.
+Purpose: run the normal daily work loop for bugs, features, refactors, follow-ups, and work items.
 
 When to use: after the baseline is stable and the repo is ready for normal work.
 
 What it must not do: no random markdown reports, no silent scope expansion, no E2E by default, and no silent drift between canon and current code/runtime truth.
 
-Next skill: continue ticket work only when the user explicitly asks. Loop back to canon/guardrails only when durable truth changes.
+Next skill: continue work only when the user explicitly asks. Loop back to canon/guardrails only when durable truth changes.
