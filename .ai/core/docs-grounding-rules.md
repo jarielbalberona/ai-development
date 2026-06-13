@@ -16,6 +16,26 @@ Role separation:
 - `.ai/` must not duplicate `project-canon/` except for workflow pointers/summaries required by the operating model.
 - `.ai-local/` is generated fallback only, never canonical.
 
+Project canon routing discipline:
+
+- Every `project-canon/README.md` must act as the canon routing index for that project.
+- `project-canon/README.md` must include a `## Canon Routing Index` section.
+- The routing index must map common task surfaces to the canon files agents should read first.
+- Required generic routing categories are:
+  - product/workflow
+  - user roles/permissions
+  - domain/business rules
+  - frontend/UI
+  - backend/API
+  - database/persistence
+  - integrations
+  - deployment/environments
+  - troubleshooting/operations
+  - verification/testing
+  - mobile/offline/device, when applicable
+  - security/privacy, when applicable
+- If a category does not apply, omit it or mark it `Not applicable`.
+
 Markdown discipline:
 
 - Do not create random markdown/text files during grounding or triage.
@@ -34,6 +54,14 @@ Before implementation, factor in:
 - domain rules
 - project guardrails
 - runtime evidence where available
+
+Canon read discipline:
+
+- Always read `project-canon/README.md` first.
+- Use its `Canon Routing Index` to select only the relevant canon files.
+- Do not read the entire `project-canon/` tree by default.
+- If the routing index is missing or incomplete, use best-effort inference and report the routing gap.
+- If the task touches multiple domains, read only the slices needed for those domains.
 
 If project-canon/, docs/, code, ticket, and runtime behavior disagree, surface the conflict during triage instead of silently choosing one.
 

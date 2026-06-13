@@ -53,11 +53,12 @@ The entry must include:
 2. Verify the repo has `.git/` and is a real project checkout.
 3. Create or repair the project entrypoint files and `project-canon/` skeleton.
 4. Ensure the project entry files point to parent `.ai/core/` rules and `project-canon/`.
-5. Regenerate `.ai-local/core-snapshot.md` from the shared parent `.ai/`.
-6. Update `.ai/workspace/project-index.local.md` for local/private routing when it exists.
-7. If `.ai/workspace/project-index.local.md` does not exist, create it from `.ai/workspace/project-index.example.md` and add the adopted project entry.
-8. Never place real project names into `.ai/workspace/project-index.example.md`.
-7. Stop. Do not seed deep project truth yet.
+5. Ensure the `project-canon/README.md` skeleton includes a `## Canon Routing Index` section placeholder.
+6. Regenerate `.ai-local/core-snapshot.md` from the shared parent `.ai/`.
+7. Update `.ai/workspace/project-index.local.md` for local/private routing when it exists.
+8. If `.ai/workspace/project-index.local.md` does not exist, create it from `.ai/workspace/project-index.example.md` and add the adopted project entry.
+9. Never place real project names into `.ai/workspace/project-index.example.md`.
+10. Stop. Do not seed deep project truth yet.
 
 ## Must Not Do
 

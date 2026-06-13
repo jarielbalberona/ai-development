@@ -4,6 +4,53 @@
 
 Normal real-work loop for bugs, features, refactors, follow-ups, and work items.
 
+## Work Modes
+
+`execute-work` must choose one mode before starting.
+
+### `assessment-only`
+
+Use when the user asks to inspect, assess, review, investigate, or plan.
+
+- Read relevant rules/canon.
+- Inspect code/runtime as needed.
+- Do not edit files.
+- Return root cause, risks, affected files, minimal fix path, and verification plan.
+- Stop after report.
+
+### `implementation-approved`
+
+Use when the user explicitly asks to fix, implement, update, or proceed.
+
+- Triage first unless the root cause is already established.
+- Implement the smallest safe change.
+- Run appropriate verification.
+- Self-heal prerequisite blockers when safe.
+- Update `project-canon/` only if durable truth changed.
+- Clean `.ai/state/`.
+
+### `verification-only`
+
+Use when the user asks to test, prove, QA, smoke, or validate.
+
+- Do not change implementation unless verification is blocked by a self-healable prerequisite.
+- Report proof boundaries clearly.
+- If a product bug is found, either fix only if explicitly allowed or report the minimal fix path.
+
+### `docs/canon-only`
+
+Use when the task is documentation/canon cleanup or source-of-truth correction.
+
+- Update only approved docs/canon/workflow files.
+- Do not modify application behavior.
+- Do not create random markdown.
+- Use short report unless high-risk cleanup was performed.
+
+If the requested mode is ambiguous, infer the safest mode:
+
+- `assessment-only` for unclear or risky work
+- `implementation-approved` only when the user explicitly asks to change, fix, or implement
+
 ## Inputs
 
 ```txt
@@ -100,17 +147,29 @@ If neither workspace root nor project root can be found:
 
 Required read order after context discovery:
 
+Token-saving guidance:
+
+- Do not read every file in full when the task is small.
+- Read headings or summaries first, then expand only the relevant sections.
+- Always read `project-canon/README.md` first.
+- Use its `Canon Routing Index` to select only the relevant `project-canon/` slices needed for the selected work mode and task surface.
+- Do not read the entire `project-canon/` tree by default.
+- If the routing index is missing or incomplete, use best-effort inference and report the gap.
+- If the task touches multiple domains, read only the slices needed for those domains.
+
 If parent workspace is available:
 
 1. `<workspace-root>/AGENTS.md`
 2. `<workspace-root>/.ai/core/execution-loop.md`
-3. `<workspace-root>/.ai/core/docs-grounding-rules.md`
-4. `<workspace-root>/.ai/core/verification-rules.md`
-5. `<workspace-root>/.ai/core/report-format.md`
-6. `<target-project>/AGENTS.md`
-7. `<target-project>/.ai-project.md`
-8. `<target-project>/project-canon/README.md`
-9. Relevant `<target-project>/project-canon/**`
+3. `<workspace-root>/.ai/core/triage-rules.md`
+4. `<workspace-root>/.ai/core/docs-grounding-rules.md`
+5. `<workspace-root>/.ai/core/verification-rules.md`
+6. `<workspace-root>/.ai/core/memory-update-rules.md`
+7. `<workspace-root>/.ai/core/report-format.md`
+8. `<target-project>/AGENTS.md`
+9. `<target-project>/.ai-project.md`
+10. `<target-project>/project-canon/README.md`
+11. Relevant `<target-project>/project-canon/**`
 
 If only project fallback is available:
 
@@ -125,11 +184,13 @@ If only project fallback is available:
 ```txt
 ticket or pasted issue or work item
 → intake
+→ choose work mode
 → triage
 → project-canon grounding
 → code/runtime investigation
 → smallest safe implementation
 → appropriate verification
+→ choose report format
 → project-canon update if durable truth changed
 → .ai update only if workflow memory changed
 → .ai/state cleanup
@@ -141,7 +202,10 @@ ticket or pasted issue or work item
 - Treat a formal ticket, pasted issue, bug report, feature request, refactor request, approved assessment follow-up, or direct user task as the work-intent artifact.
 - Use a formal ticket when one exists. Otherwise treat the pasted issue or direct user request as the work-intent artifact.
 - Discover workspace and project context before triage.
-- Read relevant `project-canon/`.
+- Choose the work mode before triage.
+- Always read `project-canon/README.md` first.
+- Use its `Canon Routing Index` to select relevant `project-canon/` files.
+- Do not read the entire `project-canon/` tree by default.
 - Treat `project-canon/` as authoritative but correctable.
 - Do intake first.
 - Triage before coding unless implementation is explicitly approved.
@@ -152,6 +216,8 @@ ticket or pasted issue or work item
 - Update `project-canon/` only when durable truth changed.
 - When work touches an area represented in `project-canon/`, validate canon against current code/tests/runtime evidence.
 - If canon is stale, update it as part of the task.
+- If the routing index is missing or incomplete, use best-effort inference and report the routing gap.
+- If the task touches multiple domains, read only the needed slices for those domains.
 - If canon and code disagree and the correct truth is unclear, report the conflict before implementation.
 - Clean `.ai/state/` at closeout.
 - Do not create random markdown reports.
@@ -160,6 +226,13 @@ ticket or pasted issue or work item
 - Prefer `project-index.local.md` when available.
 - Never modify sibling projects unless explicitly requested.
 - If invoked inside a project, default target project is that project.
+
+Default report format:
+
+- short for small or normal work
+- full for high-risk, runtime/device, DB/schema, adoption/cleanup, security/auth, multi-surface, or partial-failure work
+
+The agent must not emit audit-sized reports for trivial fixes.
 
 ## Prerequisite Self-Heal Mode
 

@@ -53,6 +53,8 @@ project-canon/decisions/README.md
 project-canon/changelog/README.md
 ```
 
+`project-canon/README.md` must include a `## Canon Routing Index` section that routes common task surfaces to the canon files agents should read first.
+
 ## Required Style
 
 - Concise.
@@ -67,11 +69,15 @@ project-canon/changelog/README.md
 1. Read the project entry files and current `project-canon/README.md`.
 2. Inspect only high-signal repo files and folder names.
 3. Populate the canon baseline with current, bounded, durable truth.
-4. Mark unknowns explicitly instead of guessing.
-5. If any statement comes from old docs, mark it as migrated and needing validation.
-6. Treat migrated legacy-doc claims as baseline truth, not final certification.
-7. Do not let root-level `docs/` survive canon seeding as an implied approved final state.
-8. Stop before deep architecture assessment or cleanup.
+4. Create or update the `Canon Routing Index` in `project-canon/README.md`.
+5. For each routing category, point to the most relevant canon files.
+6. If a category does not apply, omit it or mark it `Not applicable`.
+7. Do not invent project surfaces that are not present.
+8. Mark unknowns explicitly instead of guessing.
+9. If any statement comes from old docs, mark it as migrated and needing validation.
+10. Treat migrated legacy-doc claims as baseline truth, not final certification.
+11. Do not let root-level `docs/` survive canon seeding as an implied approved final state.
+12. Stop before deep architecture assessment or cleanup.
 
 ## Must Not Do
 

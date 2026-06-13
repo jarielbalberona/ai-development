@@ -32,6 +32,13 @@ Canon correction:
 - when work touches a canon area, validate migrated claims against current code/tests/runtime evidence
 - if canon is stale, update it as part of the task
 
+Canon routing:
+
+- `project-canon/README.md` is the canon routing index for each project.
+- It must include a `## Canon Routing Index` section that maps task surfaces to canon files.
+- Agents should read `project-canon/README.md` first, then only the relevant canon slices.
+- Do not read the entire `project-canon/` tree by default.
+
 Markdown/text file policy:
 
 - No free-floating markdown.

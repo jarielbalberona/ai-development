@@ -69,6 +69,7 @@ projects/<domain>/
 
 - `project-canon/` is the authoritative durable project truth.
 - `project-canon/` is authoritative but correctable when current code/tests/runtime evidence proves it stale or wrong.
+- `project-canon/README.md` is the canon routing index and should route agents to the relevant canon slices by task surface.
 - `.ai-project.md` is the project-specific AI contract.
 - `.ai-local/` is generated fallback only.
 - Project app code is version-controlled by that project's own repo.
@@ -123,6 +124,13 @@ ticket/plain issue
 → .ai/state cleanup
 → final report
 ```
+
+Canon read discipline:
+
+- Read `project-canon/README.md` first.
+- Use its `Canon Routing Index` to select only the canon files relevant to the task surface.
+- Do not read the entire `project-canon/` tree by default.
+- If the routing index is missing or incomplete, use best-effort inference and report the routing gap.
 
 ## Verification policy
 

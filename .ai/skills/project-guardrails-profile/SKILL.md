@@ -67,8 +67,9 @@ Do not stop at typecheck for behavioral issues.
 1. Read the current project canon baseline.
 2. Identify the project-specific safety boundaries that future tickets must not violate.
 3. Define verification expectations by task type and failure boundary.
-4. Add only high-confidence, project-relevant guardrails.
-5. Stop before broad runtime validation.
+4. If guardrail or verification docs are created or updated, update the `Canon Routing Index` in `project-canon/README.md` so those surfaces route correctly.
+5. Add only high-confidence, project-relevant guardrails.
+6. Stop before broad runtime validation.
 
 ## Constraints
 

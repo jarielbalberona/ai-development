@@ -40,6 +40,7 @@ During adoption:
 Role separation:
 
 - `project-canon/` is the authoritative project source of truth for durable product, domain, architecture, operations, integration, permission, workflow, and verification truth.
+- `project-canon/README.md` is the canon routing index and must route common task surfaces to the relevant canon files.
 - `.ai/` is the shared agent operating system for workflow rules, triage rules, verification rules, report format, workspace conventions, project index, scripts, and limited temporary state.
 - `.ai/` must not become a second docs folder or a duplicate of `project-canon/` except for workflow pointers/summaries required by the operating model.
 - `.ai-local/` is a generated fallback snapshot only. It is not canonical.
@@ -126,5 +127,11 @@ Do not combine onboarding, canon seeding, cleanup, and real feature work in one 
 3. `.ai/workspace/project-index.local.md` when present, otherwise `.ai/workspace/project-index.example.md`
 4. `projects/<target-project>/.ai-project.md`
 5. `projects/<target-project>/project-canon/README.md`
-6. Relevant files under `projects/<target-project>/project-canon/`
+6. Relevant files under `projects/<target-project>/project-canon/`, chosen through the `Canon Routing Index`
 7. Legacy/reference docs under `projects/<target-project>/docs/` only when useful
+
+`project-canon/README.md` must include:
+
+## Canon Routing Index
+
+This section maps common task surfaces to the canon files agents should read.
